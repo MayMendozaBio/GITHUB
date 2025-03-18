@@ -1,6 +1,6 @@
 
 #Clases
-
+#commmit
 class Persona:
     def __init__(self, nombre='', cedula=0, genero=''):
         self.__nombre = nombre
