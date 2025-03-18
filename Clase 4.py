@@ -2,6 +2,18 @@
 #Clases
 #commmit
 #MAY
+class sistema:
+    def __init__(self):
+        self.listpacientes=[]
+        self.numpacientes=len(self.listpacientes)
+
+    # def agregarpaciente(self, paciente):
+    #     self.__listpacientes.append(paciente)
+    #     self.__numpacientes = len(self.__listpacientes)
+
+    # def getnum(self):
+    #     return self.__numpacientes
+
 class Persona:
     def __init__(self, nombre='', cedula=0, genero=''):
         self.__nombre = nombre
@@ -74,20 +86,23 @@ class medico(Empleado_Hospital):
         return self.__especialidad
 
 
-objetos = []
+#objetos = []
 enfermeras=[]
 medicos=[]
+sistema=sistema()
+y=sistema.listpacientes #preguntar como hace rprivado
 
 while True:
     menu=input('''
     Ingrese la opcion que necesite del menú
     1. Ingresar los datos del paciente
     2. Buscar paciente
-    3.Ingresar enfermera
-    4.Buscar enfermera
-    5.Ingresar médico
-    6.Buscar médico
-    7. Salir''')
+    3.ver número de pacientes
+    4.Ingresar enfermera
+    5.Buscar enfermera
+    6.Ingresar médico
+    7.Buscar médico
+    8. Salir''')
 
     if menu=="1":
         nombre=str(input("Ingrese el nombre del paciente"))
@@ -100,7 +115,9 @@ while True:
         paciente.setCedula(cedula)
         paciente.setGenero(genero)
         paciente.setServicio(servicio)
-        objetos.append(paciente)
+
+        #agregar pacientes al sistema
+        y.append(paciente)
 
 
     elif menu=="2":
@@ -118,7 +135,7 @@ Servicio: {i.getServicio()}
         else:
             print("No existe el apciente en la abse de datos")
 
-    elif menu=="3":
+    elif menu=="4":
         nombre=str(input("Ingrese el nombre de la enfermera"))
         cedula=int(input("Ingrese la cedula de la enefermera"))
         genero=str(input("Ingrese el genero de la enfermera"))
@@ -134,7 +151,7 @@ Servicio: {i.getServicio()}
 
         enfermeras.append(enf)
 
-    elif menu=="4":
+    elif menu=="5":
         CC=int(input("INGRESE LA CEDULA DE LA ENFERMERA QUE DESEA BUSCAR: "))
         for i in enfermeras: 
             if CC==i.getCedula():
@@ -150,7 +167,7 @@ Rango: {i.getrango()}
         else:
             print("No existe la enfermera en la abse de datos")
 
-    elif menu=="5":
+    elif menu=="6":
         nombre=str(input("Ingrese el nombre del médico"))
         cedula=int(input("Ingrese la cedula del médico"))
         genero=str(input("Ingrese el genero del médico"))
@@ -166,7 +183,7 @@ Rango: {i.getrango()}
 
         medicos.append(m)
     
-    elif menu=="6":
+    elif menu=="7":
         CC=int(input("INGRESE LA CEDULA DEL MÉDICO QUE DESEA BUSCAR: "))
         for i in medicos: 
             if CC==i.getCedula():
@@ -182,7 +199,7 @@ Especialidad: {i.getespecialidad()}
         else:
             print("No existe el médico en la abse de datos")
 
-    elif menu=="7":
+    elif menu=="8":
         break
     else:
         print("Ingresa un digito válido")
