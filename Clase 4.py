@@ -135,9 +135,9 @@ while True:
 
     if menu=="1":
         sistema.ingresarpaciente()
-        
+        pass
     elif menu=="2":
-        sistema.getdatos
+        sistema.getdatos()
         
         pass
     
