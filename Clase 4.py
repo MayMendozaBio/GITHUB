@@ -7,6 +7,7 @@ class Persona:
         self.__nombre = nombre
         self.__cedula = cedula
         self.__genero = genero
+        print('Amarillo')
 
     # Getters
     def getNombre(self):
